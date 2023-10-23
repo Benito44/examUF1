@@ -2,7 +2,8 @@
 
 require_once '../model/pdo-articles.php';
 require_once '../controller/input-common.php';
-require_once '../controller/images.php';
+// ex15
+//require_once '../controller/images.php';
 require_once '../controller/session.php';
 
 $errors = [];
@@ -57,8 +58,9 @@ if (isset($_GET['id'])) {
     $article = getPost($articleId);
 
 } else unset($_SESSION['articleId']);
-
-require_once '../view/edit.view.php';
+//ex2
+//require_once '../view/edit.view.php';
+include '../view/edit.view.php';
 
 // Funcions
 

@@ -159,10 +159,12 @@
                         </div>';
                     }
                     ?>
-
+            <!-- ex15 -->
+            <a href="index.php">Torna al index</a>
                 </form>
             </div>
         </div>
+
     </main>
 
     <!-- Delete confirm modal -->
