@@ -1,12 +1,12 @@
 <?php
 // ex5 
 require 'session.php';
-require '../model/db-connection.php';
+require_once '../model/db-connection.php';
 function mostrar(){
   try {
+    session_start();
     $id = getSessionUserId();
     $connexio = getConnection();
-    // Fem la secuencia per insertar els usuaris
     $statement = $connexio->prepare("SELECT * FROM users WHERE id != ?");
     $statement->bindParam(1,$id);
     $statement->execute();

@@ -11,8 +11,8 @@
 <body>
     <form method="$_POST" action="../controller/donar-baixa.php">
         Estas segur que et vols donar de baixa? Els teus articles no seran borrats<br>
-        <input type="text" id="baixa"  size="100" maxlength="100" placeholder = "Per donar-te de baixa escriu:Si, em vull donar de baixa">
-    <input type="submit" value="Borrar">
+        <input type="text" id="baixa"  size="100" maxlength="100" placeholder = "Per donar-te de baixa escriu:Si">
+    <input type="submit" value="Borrar" onclick="baixa()">
     <span class="error">
 		<?php if(!isset($error)){
 		$error;

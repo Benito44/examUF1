@@ -6,14 +6,15 @@ function baixa(){
   try {
     session_start();
     $id = getSessionUserId();
-    $baixa = $_POST('baixa');
+    echo $id;
+    $baixa = $_POST['baixa'];
     $connexio = getConnection();
-    if ($baixa == "Si, em vull donar de baixa"){
+    if ($baixa == "Si"){
       $statement = $connexio->prepare("DELETE FROM users WHERE id = ?");
       $statement->bindParam(1,$id);
       $statement->execute();
     } else {
-      $error =  "No has posat el missatge correctament";
+      echo "No has posat el missatge correctament";
       include '../view/baixa-view.php';
     }
 
@@ -22,8 +23,10 @@ function baixa(){
     catch (Exception $e) {
         echo "Error:" .  $e->getMessage();
     }
+    include '../view/baixa-view.php';
 }
-
-
 include '../view/baixa-view.php';
+
+
+
 ?>
